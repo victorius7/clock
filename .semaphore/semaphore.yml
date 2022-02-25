@@ -19,3 +19,8 @@ blocks:
             - flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
             - pip install pytest
             - pytest
+promotions:
+  - name: Product deployment
+    pipeline_file: pipeline_2.yml
+    auto_promote:
+      when: branch = 'master' AND result = 'passed'
